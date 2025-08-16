@@ -23,17 +23,18 @@
     }
 
     .card {
-      background-color: rgba(255, 255, 255, 0.9); /* slightly transparent */
+      position: relative;
+      background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), #fff;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     }
 
     .course-img {
@@ -44,7 +45,7 @@
     }
 
     .card h3 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 10px;
       color: #111;
     }
@@ -151,6 +152,105 @@
     `;
     coursesGrid.appendChild(card);
   });
+</script>
+
+<!-- Organization JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zion Holdings",
+  "url": "https://joesephblog.github.io/zionholdings/",
+  "logo": "https://joesephblog.github.io/zionholdings/logo.png",
+  "sameAs": [
+    "https://www.linkedin.com/in/in/ziondesigns-enterprise-0b28ab37a",
+    "https://www.instagram.com/official_ziondesignsenterprise",
+    "https://www.tiktok.com/@zd_graphics0",
+    "https://www.facebook.com/profile.php?id=61579121713167"
+  ],
+  "department": {
+    "@type": "ProfessionalService",
+    "name": "Digital Solutions & Online Courses",
+    "description": "Premium online courses, SEO services, and exclusive apps to help businesses grow globally."
+  }
+}
+</script>
+
+<!-- Courses JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "name": "Digital Marketing Mastery",
+      "description": "Learn SEO, social media, and content strategy.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Zion Holdings",
+        "sameAs": "https://joesephblog.github.io/zionholdings/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://joesephblog.github.io/zionholdings/courses.html",
+        "priceCurrency": "NGN",
+        "price": "20000",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Premium Web Design",
+      "description": "Master HTML, CSS, and responsive design.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Zion Holdings",
+        "sameAs": "https://joesephblog.github.io/zionholdings/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://joesephblog.github.io/zionholdings/courses.html",
+        "priceCurrency": "NGN",
+        "price": "20000",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "App Development Essentials",
+      "description": "Create mobile apps and learn deployment.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Zion Holdings",
+        "sameAs": "https://joesephblog.github.io/zionholdings/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://joesephblog.github.io/zionholdings/courses.html",
+        "priceCurrency": "NGN",
+        "price": "50000",
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Graphic Design Mastery",
+      "description": "Create logos, banners, and social media designs.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Zion Holdings",
+        "sameAs": "https://joesephblog.github.io/zionholdings/"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://joesephblog.github.io/zionholdings/courses.html",
+        "priceCurrency": "NGN",
+        "price": "7000",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+}
 </script>
 
 </body>
