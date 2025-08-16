@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Online Courses – Zion Holdings</title>
+  <meta name="description" content="Browse Zion Holdings' premium online courses in business, marketing, and technology. Learn skills to grow your career and business."/>
+  <link rel="canonical" href="https://joesephblog.github.io/zionholdings/courses.html"/>
+  <meta property="og:title" content="Online Courses – Zion Holdings"/>
+  <meta property="og:description" content="Premium online courses for business growth and professional success."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://joesephblog.github.io/zionholdings/courses.html"/>
+  <meta property="og:image" content="course1.jpeg"/>
+  <link rel="icon" href="favicon.ico"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Basic mobile-friendly styling for courses grid */
+    #courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="brand">
+      <span class="title">Zion Holdings</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html" class="active">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="section container">
+  <div class="kicker">Our Courses</div>
+  <h2>Learn & Grow</h2>
+  <div class="grid-3" id="courses-grid"></div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2025 Zion Holdings. All Rights Reserved.</p>
+</footer>
+
+<!-- Paystack JS -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+// Paystack payment function
+function payWithPaystack(email, amount, courseName, telegramLink){
+  var handler = PaystackPop.setup({
+    key: 'pk_live_9372515233e4b6a764c90df064a994aff9d56aaf',
+    email: email,
+    amount: amount * 100,
+    currency: "NGN",
+    ref: '' + Math.floor((Math.random() * 1000000000) + 1),
+    callback: function(response){
+      alert('Payment successful for ' + courseName);
+      window.location.href = telegramLink;
+    },
+    onClose: function(){
+      alert('Transaction was not completed.');
+    }
+  });
+  handler.openIframe();
+}
+
+// Courses list
+const courses = [
+  {title:"Digital Marketing Mastery", description:"Learn SEO, social media, and content strategy.", price:20000, image:"course4.jpeg", telegram:"https://t.me/+NartKpjnl0JlY2U8"},
+  {title:"Premium Web Design", description:"Master HTML, CSS, and responsive design.", price:20000, image:"course3.jpeg", telegram:"https://t.me/+ZP46zyyAXls5Zjk8"},
+  {title:"App Development Essentials", description:"Create mobile apps and learn deployment.", price:50000, image:"course2.jpeg", telegram:"https://t.me/+LvQO22QLydY4OWY0"},
+  {title:"Graphic Design Mastery", description:"Create logos, banners, and social media designs.", price:7000, image:"course1.jpeg", telegram:"https://t.me/+P1feKkWsp3VkYmY0"}
+];
+
+// Populate courses dynamically
+const coursesGrid = document.getElementById('courses-grid');
+courses.forEach(course => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <img src="${course.image}" alt="${course.title}"/>
+    <h3>${course.title}</h3>
+    <p>${course.description}</p>
+    <p class="amount">₦${course.price.toLocaleString()}</p>
+    <button class="btn btn-primary" onclick="payWithPaystack('student@example.com', ${course.price}, '${course.title}', '${course.telegram}')">Buy Now</button>
+  `;
+  coursesGrid.appendChild(card);
+});
+</script>
+
+<!-- Organization JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zion Holdings",
+  "url": "https://joesephblog.github.io/zionholdings/",
+  "logo": "https://joesephblog.github.io/zionholdings/logo.png",
+  "sameAs": [
+    "https://www.linkedin.com/in/in/ziondesigns-enterprise-0b28ab37a",
+    "https://www.instagram.com/official_ziondesignsenterprise",
+    "https://www.tiktok.com/@zd_graphics0",
+    "https://www.facebook.com/profile.php?id=61579121713167"
+  ],
+  "department": {
+    "@type": "ProfessionalService",
+    "name": "Digital Solutions & Online Courses",
+    "description": "Premium online courses, SEO services, and exclusive apps to help businesses grow globally."
+  }
+}
+</script>
+
+<!-- Courses JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "name": "Digital Marketing Mastery",
+      "description": "Learn SEO, social media, and content strategy.",
+      "provider": {"@type": "Organization","name": "Zion Holdings","sameAs": "https://joesephblog.github.io/zionholdings/"},
+      "offers": {"@type": "Offer","url": "https://joesephblog.github.io/zionholdings/courses.html","priceCurrency": "NGN","price": "20000","availability": "https://schema.org/InStock"}
+    },
+    {
+      "@type": "Course",
+      "name": "Premium Web Design",
+      "description": "Master HTML, CSS, and responsive design.",
+      "provider": {"@type": "Organization","name": "Zion Holdings","sameAs": "https://joesephblog.github.io/zionholdings/"},
+      "offers": {"@type": "Offer","url": "https://joesephblog.github.io/zionholdings/courses.html","priceCurrency": "NGN","price": "20000","availability": "https://schema.org/InStock"}
+    },
+    {
+      "@type": "Course",
+      "name": "App Development Essentials",
+      "description": "Create mobile apps and learn deployment.",
+      "provider": {"@type": "Organization","name": "Zion Holdings","sameAs": "https://joesephblog.github.io/zionholdings/"},
+      "offers": {"@type": "Offer","url": "https://joesephblog.github.io/zionholdings/courses.html","priceCurrency": "NGN","price": "50000","availability": "https://schema.org/InStock"}
+    },
+    {
+      "@type": "Course",
+      "name": "Graphic Design Mastery",
+      "description": "Create logos, banners, and social media designs.",
+      "provider": {"@type": "Organization","name": "Zion Holdings","sameAs": "https://joesephblog.github.io/zionholdings/"},
+      "offers": {"@type": "Offer","url": "https://joesephblog.github.io/zionholdings/courses.html","priceCurrency": "NGN","price": "7000","availability": "https://schema.org/InStock"}
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
