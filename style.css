@@ -361,6 +361,61 @@ a {
 
   .cta-row {
     flex-direction: column;
+
+     /* =========================
+   SOCIAL MEDIA FLOATING BUTTONS
+========================= */
+.social-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--black-2);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-btn img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Makes icons white by default */
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  border-color: var(--gold);
+  background: var(--gold-soft);
+}
+
+.social-btn.whatsapp:hover img { filter: brightness(0) invert(0.2) sepia(1) saturate(5) hue-rotate(90deg); }
+.social-btn.tiktok:hover img   { filter: brightness(0) invert(0) sepia(1) saturate(5) hue-rotate(290deg); }
+.social-btn.linkedin:hover img { filter: brightness(0) invert(0.2) sepia(1) saturate(5) hue-rotate(200deg); }
+.social-btn.instagram:hover img{ filter: brightness(0) invert(0.2) sepia(1) saturate(5) hue-rotate(330deg); }
+.social-btn.facebook:hover img { filter: brightness(0) invert(0.2) sepia(1) saturate(5) hue-rotate(220deg); }
+
+/* Responsive: smaller devices */
+@media(max-width: 768px){
+  .social-buttons { right: 12px; bottom: 12px; }
+  .social-btn { width: 45px; height: 45px; }
+  .social-btn img { width: 20px; height: 20px; }
+}
+
     align-items: flex-start;
   }
 }
+
