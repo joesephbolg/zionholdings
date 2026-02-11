@@ -1,55 +1,98 @@
 /* =========================
-   ZION HOLDINGS – PREMIUM THEME
-   Gold & Black | Modern UI
+   ZION HOLDINGS – EXECUTIVE EDITION
+   Gold & Black | Mature | Animated
 ========================= */
 
 :root {
   --black: #0b0e14;
   --black-2: #111827;
-  --gold: #FFD700;
-  --gold-soft: rgba(255, 215, 0, 0.15);
+  --gold: #d4af37;
+  --gold-soft: rgba(212,175,55,.14);
   --text: #e5e7eb;
   --muted: #9ca3af;
 
-  --radius: 16px;
-  --radius-sm: 10px;
-  --shadow: 0 20px 40px rgba(0,0,0,.45);
-}
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow-lg: 0 30px 70px rgba(0,0,0,.55);
+  --shadow-md: 0 18px 40px rgba(0,0,0,.45);
 
-/* RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: "Inter", system-ui, sans-serif;
-  background: radial-gradient(800px 400px at 10% -10%, var(--gold-soft), transparent),
-              linear-gradient(180deg, var(--black), var(--black-2));
-  color: var(--text);
-  line-height: 1.6;
-}
-
-img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
-
-.container {
-  width: min(1200px, 92%);
-  margin: auto;
-}
-
-.section {
-  padding: 90px 0;
+  --ease: cubic-bezier(.22,.61,.36,1);
 }
 
 /* =========================
-   ANIMATIONS
+   RESET & BASE
+========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background:
+    radial-gradient(900px 450px at 8% -10%, var(--gold-soft), transparent),
+    linear-gradient(180deg, var(--black), var(--black-2));
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 110px 0;
+}
+
+/* =========================
+   KEYFRAMED ANIMATIONS
 ========================= */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes floatSoft {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .reveal {
-  animation: fadeUp .8s ease forwards;
+  opacity: 0;
+  animation: fadeUp .9s var(--ease) forwards;
 }
+
+.reveal-delay-1 { animation-delay: .15s; }
+.reveal-delay-2 { animation-delay: .3s; }
+.reveal-delay-3 { animation-delay: .45s; }
 
 /* =========================
    HEADER / NAV
@@ -58,8 +101,8 @@ a { text-decoration: none; color: inherit; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11,14,20,.7);
-  backdrop-filter: blur(14px);
+  background: rgba(11,14,20,.72);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
@@ -67,7 +110,23 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
+  padding: 18px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 44px;
+  animation: fadeIn .8s ease forwards;
+}
+
+.brand .title {
+  font-weight: 700;
+  letter-spacing: .4px;
 }
 
 .nav ul {
@@ -80,13 +139,13 @@ a { text-decoration: none; color: inherit; }
   padding: 10px 16px;
   border-radius: var(--radius-sm);
   color: var(--muted);
-  transition: all .25s ease;
+  transition: all .35s var(--ease);
 }
 
 .nav a:hover,
 .nav a.active {
   color: var(--gold);
-  background: rgba(255,215,0,.12);
+  background: rgba(212,175,55,.14);
 }
 
 /* =========================
@@ -95,137 +154,184 @@ a { text-decoration: none; color: inherit; }
 .hero {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
-  gap: 40px;
+  gap: 56px;
   align-items: center;
+  padding-top: 80px;
+}
+
+.hero-content {
+  animation: fadeUp 1s var(--ease) forwards;
 }
 
 .h1 {
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
-  font-weight: 900;
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
 }
 
-.h1 span {
-  background: linear-gradient(90deg, var(--gold), #fff2a8);
+.h1 span,
+.highlight {
+  background: linear-gradient(90deg, var(--gold), #fff2b0);
   -webkit-background-clip: text;
   color: transparent;
 }
 
 .lead {
+  margin-top: 18px;
+  font-size: 1.12rem;
   color: var(--muted);
-  margin-top: 12px;
-  font-size: 1.1rem;
+  max-width: 560px;
 }
 
+.hero-visual,
 .hero-card {
   background: var(--black-2);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: var(--shadow);
+  padding: 26px;
+  box-shadow: var(--shadow-md);
+  animation: floatSoft 6s ease-in-out infinite;
 }
 
 /* =========================
    BUTTONS
 ========================= */
+.cta-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+}
+
 .btn {
-  padding: 14px 20px;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255,255,255,.12);
+  padding: 14px 24px;
+  border-radius: 40px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,.18);
   background: transparent;
   color: var(--text);
   cursor: pointer;
-  transition: all .25s ease;
+  transition: all .35s var(--ease);
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: var(--gold);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, var(--gold), #fff1a8);
+  background: linear-gradient(135deg, var(--gold), #fff1b8);
   color: #000;
   border: none;
-  font-weight: 800;
+  font-weight: 700;
+}
+
+.btn-outline {
+  background: transparent;
 }
 
 /* =========================
-   CARDS & GRIDS
+   SECTION HEADERS
+========================= */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .75rem;
+  color: var(--gold);
+}
+
+.section-header h2 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin-top: 12px;
+}
+
+.section-intro {
+  max-width: 620px;
+  margin: 14px auto 0;
+  color: var(--muted);
+}
+
+/* =========================
+   GRIDS & CARDS
 ========================= */
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 28px;
 }
 
 .card {
   background: var(--black-2);
+  padding: 28px;
   border-radius: var(--radius);
-  padding: 24px;
   border: 1px solid rgba(255,255,255,.06);
-  transition: all .3s ease;
+  transition: all .45s var(--ease);
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, transparent, rgba(212,175,55,.18), transparent);
+  opacity: 0;
+  transition: opacity .4s var(--ease);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow);
+  transform: translateY(-10px);
   border-color: var(--gold);
+  box-shadow: var(--shadow-lg);
 }
 
-/* =========================
-   BRANCH / SERVICE CARDS
-========================= */
-.branch-card {
-  background: var(--black-2);
-  border-radius: var(--radius);
-  overflow: hidden;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,.06);
-  animation: fadeUp .8s ease forwards;
-}
-
-.branch-card img {
-  height: 200px;
-  object-fit: cover;
-}
-
-.branch-card h3 {
-  margin: 16px 0 8px;
+.card h3 {
+  margin-top: 10px;
   color: var(--gold);
 }
 
-.branch-card p {
+.card p {
+  margin-top: 8px;
   color: var(--muted);
-  padding: 0 16px 16px;
 }
 
 /* =========================
    CONTACT FORM
 ========================= */
 .contact-form {
-  max-width: 600px;
-  margin: auto;
+  max-width: 620px;
+  margin-inline: auto;
   background: var(--black-2);
-  padding: 32px;
+  padding: 40px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
 }
 
 .contact-form h2 {
   text-align: center;
-  margin-bottom: 20px;
   color: var(--gold);
+  margin-bottom: 24px;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 14px;
+  padding: 14px 16px;
   background: var(--black);
-  border: 1px solid rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.16);
   border-radius: var(--radius-sm);
   color: var(--text);
+  margin-bottom: 16px;
+  transition: border .3s var(--ease);
 }
 
 .contact-form input:focus,
@@ -238,8 +344,8 @@ a { text-decoration: none; color: inherit; }
    FOOTER
 ========================= */
 .footer {
+  padding: 36px 0;
   text-align: center;
-  padding: 28px 0;
   color: var(--muted);
   border-top: 1px solid rgba(255,255,255,.06);
 }
@@ -247,8 +353,14 @@ a { text-decoration: none; color: inherit; }
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
