@@ -1,77 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Portfolio – Zion Holdings</title>
-  <meta name="description" content="Explore the portfolio of Zion Holdings including digital designs, real estate projects, and online course creations."/>
-  <link rel="canonical" href="https://joeseph.github.io/zionholdings/portfolio.html"/>
-  <meta property="og:title" content="Portfolio – Zion Holdings"/>
-  <meta property="og:description" content="View Zion Holdings' projects and creations."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://joeseph.github.io/zionholdings/portfolio.html"/>
-  <meta property="og:image" content="graphics.png"/>
-  <link rel="icon" href="favicon.ico"/>
-  <link rel="stylesheet" href="style.css"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Portfolio – Zion Holdings</title>
+<meta name="description" content="Explore the premium projects and creative work by Zion Holdings across design, web development, real estate, and online courses."/>
+
+<link rel="canonical" href="https://joesephblog.github.io/zionholdings/portfolio.html"/>
+<meta property="og:title" content="Portfolio – Zion Holdings"/>
+<meta property="og:description" content="Showcasing Zion Holdings' premium projects and creative solutions."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://joesephblog.github.io/zionholdings/portfolio.html"/>
+<meta property="og:image" content="portfolio1.jpeg"/>
+
+<link rel="icon" href="favicon.ico"/>
+<link rel="stylesheet" href="style.css"/>
+
+<style>
+/* ===== Portfolio Styles ===== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.portfolio-card {
+  background: var(--black-2);
+  border: 1px solid rgba(255,215,0,0.2);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,.6);
+  border-color: var(--gold);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-card h3 {
+  font-size: 1.3rem;
+  color: var(--gold);
+  font-weight: 800;
+  margin: 12px 16px 6px;
+}
+
+.portfolio-card p {
+  color: var(--text);
+  font-size: 0.95rem;
+  margin: 0 16px 16px;
+}
+
+.btn-primary {
+  display: block;
+  width: calc(100% - 32px);
+  margin: 0 16px 16px;
+  background: linear-gradient(90deg, var(--gold), #fff1a8);
+  color: #000;
+  border: none;
+  padding: 12px 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.3);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--gold), #fff2a8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.2rem;
+  margin-top: 12px;
+}
+
+/* Responsive */
+@media(max-width: 600px){
+  .portfolio-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <span class="title">Zion Holdings</span>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html" class="active">Portfolio</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+
+<header class="header">
+  <div class="container nav">
+    <div class="brand">
+      <img src="logo.png" alt="Zion Holdings Logo"/>
+      <span class="title">Zion Holdings</span>
     </div>
-  </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="courses.html">Courses</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <section class="section container">
-    <h1 class="h1">Our Portfolio</h1>
-    <p class="lead">Take a look at some of our premium projects and creations across all branches.</p>
+<section class="hero container">
+  <h2>Our Projects & Creations</h2>
+  <p>Discover the premium projects crafted by Zion Holdings across design, real estate, web development, and online courses.</p>
+</section>
 
-    <div class="grid-3">
-      <div class="port-card">
-        <img src="graphics 4.png" alt="Graphic Design Project"/>
-        <div>
-          <h3>Branding & Graphics</h3>
-          <p>Premium logo and visual identity projects for global clients.</p>
-          <span class="tag">Design</span>
-          <span class="tag">Branding</span>
-        </div>
-      </div>
+<section class="section container">
+  <div class="portfolio-grid" id="portfolio-grid"></div>
+</section>
 
-      <div class="port-card">       
-        <img src="real.jpeg" alt="Real Estate Project"/>
-        <div>
-          <h3>Luxury Real Estate</h3>
-          <p>Showcasing high-end property development and interior design projects.</p>
-          <span class="tag">Real Estate</span>
-          <span class="tag">Interiors</span>
-        </div>
-      </div>
+<footer class="footer">
+  <p>&copy; 2025 Zion Holdings. All Rights Reserved.</p>
+</footer>
 
-      <div class="port-card">                     
-        <img src="course.jpeg" alt="Online Course"/>
-        <div>
-          <h3>Online Courses</h3>
-          <p>Premium online courses and apps designed for business growth.</p>
-          <span class="tag">Education</span>
-          <span class="tag">Apps</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+// Portfolio items
+const portfolioItems = [
+  {title:"Corporate Branding", desc:"Premium branding and identity solutions.", img:"portfolio1.jpeg", link:"#"},
+  {title:"Luxury Interiors", desc:"High-end interior designs for residential and commercial.", img:"interior 2.jpeg", link:"#"},
+  {title:"Web & App Development", desc:"Responsive websites and mobile apps for businesses.", img:"course3.jpeg", link:"#"},
+  {title:"Digital Marketing Campaigns", desc:"SEO, social media, and content strategy campaigns.", img:"course4.jpeg", link:"#"},
+  {title:"Real Estate Projects", desc:"Exclusive real estate developments and investment solutions.", img:"real.jpeg", link:"#"},
+  {title:"Online Courses & Tutorials", desc:"High-quality digital courses for skill development.", img:"course1.jpeg", link:"#"}
+];
 
-  <footer class="footer">
-    <p>&copy; 2025 Zion Holdings. All Rights Reserved.</p>
-  </footer>
+const portfolioGrid = document.getElementById('portfolio-grid');
+portfolioItems.forEach(item => {
+  const card = document.createElement('div');
+  card.className = 'portfolio-card reveal';
+  card.innerHTML = `
+    <img src="${item.img}" alt="${item.title}">
+    <h3>${item.title}</h3>
+    <p>${item.desc}</p>
+    <a href="${item.link}" class="btn-primary">View Project</a>
+  `;
+  portfolioGrid.appendChild(card);
+});
+</script>
+
 </body>
 </html>
