@@ -3,72 +3,106 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
   <title>Blog – Zion Holdings</title>
-  <meta name="description" content="Read insights, tips, and updates from Zion Holdings on digital solutions, SEO, and online courses."/>
+  <meta name="description" content="Read insights, strategies, and updates from Zion Holdings on digital solutions, SEO, branding, and online education."/>
+
   <link rel="canonical" href="https://joeseph.github.io/zionholdings/blog.html"/>
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Blog – Zion Holdings"/>
   <meta property="og:description" content="Insights and updates from Zion Holdings."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://joeseph.github.io/zionholdings/blog.html"/>
   <meta property="og:image" content="graphics.png"/>
+
+  <!-- Favicon -->
   <link rel="icon" href="favicon.ico"/>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css"/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 </head>
+
 <body>
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <span class="title">Zion Holdings</span>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="brand">
+      <span class="title">Zion Holdings</span>
+    </a>
+
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- BLOG INTRO -->
   <section class="section container">
-    <h1 class="h1">Our Blog</h1>
-    <p class="lead">Read the latest insights, tips, and updates from Zion Holdings.</p>
+    <header class="section-header">
+      <span class="kicker">Insights & Updates</span>
+      <h1 class="h1">Zion Holdings <span class="highlight">Blog</span></h1>
+      <p class="section-intro">
+        Thought leadership, practical strategies, and industry insights
+        from our team of professionals.
+      </p>
+    </header>
 
-    <div class="posts">
-      <div class="post">
-        <div class="thumb"></div>
-        <div class="pad">
-          <h3>SEO Tips to Rank Higher in 2025</h3>
-          <p>Learn practical strategies to improve your website's search engine ranking and visibility.</p>
-          <p class="meta">Posted on Aug 15, 2025</p>
-        </div>
-      </div>
+    <!-- BLOG POSTS -->
+    <div class="grid-3">
 
-      <div class="post">
+      <article class="card reveal reveal-delay-1">
         <div class="thumb"></div>
-        <div class="pad">
-          <h3>Top 5 Design Trends for Businesses</h3>
-          <p>Explore modern graphic and web design trends to keep your brand ahead of the curve.</p>
-          <p class="meta">Posted on Aug 10, 2025</p>
-        </div>
-      </div>
+        <h3>SEO Tips to Rank Higher in 2025</h3>
+        <p>
+          Practical and sustainable strategies to improve visibility,
+          traffic, and long-term search performance.
+        </p>
+        <p class="meta">Posted on Aug 15, 2025</p>
+      </article>
 
-      <div class="post">
+      <article class="card reveal reveal-delay-2">
         <div class="thumb"></div>
-        <div class="pad">
-          <h3>How to Build an Online Course that Sells</h3>
-          <p>Step-by-step guide for creating engaging online courses for your audience.</p>
-          <p class="meta">Posted on Aug 5, 2025</p>
-        </div>
-      </div>
+        <h3>Top 5 Design Trends for Businesses</h3>
+        <p>
+          Explore modern branding and web design approaches
+          that keep businesses competitive and relevant.
+        </p>
+        <p class="meta">Posted on Aug 10, 2025</p>
+      </article>
+
+      <article class="card reveal reveal-delay-3">
+        <div class="thumb"></div>
+        <h3>How to Build an Online Course that Sells</h3>
+        <p>
+          A structured guide to creating, packaging, and launching
+          digital courses that deliver real value.
+        </p>
+        <p class="meta">Posted on Aug 5, 2025</p>
+      </article>
+
     </div>
   </section>
 
-  <footer class="footer">
+</main>
+
+<footer class="footer">
+  <div class="container">
     <p>&copy; 2025 Zion Holdings. All Rights Reserved.</p>
-  </footer>
+  </div>
+</footer>
+
 </body>
 </html>
