@@ -1,19 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Our Services – Zion Holdings</title>
-  <meta name="description" content="Explore Zion Holdings' range of services, from enterprise software to online courses and premium productivity apps."/>
-  <link rel="canonical" href="https://joesephbolg.github.io/zionholdings/services.html"/>
-  <meta property="og:title" content="Our Services – Zion Holdings"/>
-  <meta property="og:description" content="Premium digital services for business growth worldwide."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://joesephbolg.github.io/zionholdings/services.html"/>
-  <meta property="og:image" content="og-image.jpg"/>
-  <link rel="icon" href="favicon.ico"/>
-  <link rel="stylesheet" href="style.css"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Our Services – Zion Holdings</title>
+<meta name="description" content="Explore Zion Holdings' range of services, from enterprise software to online courses and premium productivity apps."/>
+<link rel="canonical" href="https://joesephbolg.github.io/zionholdings/services.html"/>
+
+<meta property="og:title" content="Our Services – Zion Holdings"/>
+<meta property="og:description" content="Premium digital services for business growth worldwide."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://joesephbolg.github.io/zionholdings/services.html"/>
+<meta property="og:image" content="og-image.jpg"/>
+
+<link rel="icon" href="favicon.ico"/>
+<link rel="stylesheet" href="style.css"/>
+
+<style>
+/* ===== Services Page ===== */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  background: var(--black-2);
+  border: 1px solid rgba(255,215,0,0.2);
+  border-radius: var(--radius);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,.5);
+  border-color: var(--gold);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--gold), #fff1a8);
+  color: #000;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.3);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--gold), #fff2a8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* Responsive */
+@media(max-width: 600px){
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header class="header">
@@ -22,36 +110,47 @@
       <img src="logo.png" alt="Zion Holdings Logo"/>
       <span class="title">Zion Holdings</span>
     </div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="branches.html">Branches</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<section class="section container">
+<section class="hero container">
   <h1>Our Services</h1>
+  <p>Delivering premium solutions across software, online learning, and productivity tools to elevate your business and career.</p>
+</section>
+
+<section class="section container">
   <div class="grid-3">
     <div class="card">
       <h3>Enterprise Solutions</h3>
-      <p>Custom software, automation tools, and strategic consulting to help businesses grow and scale efficiently.</p>
+      <p>Custom software, automation tools, and strategic consulting to help businesses grow efficiently.</p>
+      <button class="btn-primary">Learn More</button>
     </div>
     <div class="card">
       <h3>Online Courses</h3>
       <p>Skill-based learning to help professionals stay ahead in business, marketing, and technology.</p>
+      <button class="btn-primary">Explore Courses</button>
     </div>
     <div class="card">
       <h3>Premium Apps</h3>
       <p>Affordable, high-quality apps at ₦10,000 for individuals and organizations.</p>
+      <button class="btn-primary">Get App</button>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <p>© 2025 Zion Holdings. All rights reserved.</p>
+  <p>© 2025 Zion Holdings. All Rights Reserved.</p>
 </footer>
 
 </body>
